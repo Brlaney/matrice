@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|c:\\users\\brlan\\documents\\coding\\latest-matrix\\matrix\\structuralsystem.member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|solutionrelative:structuralsystem.member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|c:\\users\\brlan\\documents\\coding\\latest-matrix\\matrix\\structuralsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|solutionrelative:structuralsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|c:\\users\\brlan\\documents\\coding\\latest-matrix\\matrix\\structuralsystem.node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|solutionrelative:structuralsystem.node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|c:\\users\\brlan\\documents\\coding\\latest-matrix\\matrix\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|c:\\users\\brlan\\documents\\coding\\latest-matrix\\matrix\\structuralsystem.node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|solutionrelative:structuralsystem.node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E2B4491-44C6-4945-8475-E5E3C61E3002}|matrix.csproj|c:\\users\\brlan\\documents\\coding\\latest-matrix\\matrix\\inputdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 288,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "StructuralSystem.Member.cs",
+              "DocumentMoniker": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\StructuralSystem.Member.cs",
+              "RelativeDocumentMoniker": "StructuralSystem.Member.cs",
+              "ToolTip": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\StructuralSystem.Member.cs",
+              "RelativeToolTip": "StructuralSystem.Member.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T23:26:01.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "StructuralSystem.Node.cs",
               "DocumentMoniker": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\StructuralSystem.Node.cs",
               "RelativeDocumentMoniker": "StructuralSystem.Node.cs",
@@ -38,25 +55,24 @@
               "RelativeToolTip": "StructuralSystem.Node.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T22:39:22.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-28T22:39:22.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "StructuralSystem.cs",
               "DocumentMoniker": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\StructuralSystem.cs",
               "RelativeDocumentMoniker": "StructuralSystem.cs",
               "ToolTip": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\StructuralSystem.cs",
               "RelativeToolTip": "StructuralSystem.cs",
-              "ViewState": "AQIAAKoAAAAAAAAAAAAAANQAAAAIAAAA",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAwwKkBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-19T04:23:56.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "InputData.cs",
               "DocumentMoniker": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\InputData.cs",
               "RelativeDocumentMoniker": "InputData.cs",
@@ -74,9 +90,10 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Brlan\\Documents\\Coding\\latest-matrix\\matrix\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA9wDYAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-17T03:22:41.239Z"
+              "WhenOpened": "2024-02-17T03:22:41.239Z",
+              "EditorCaption": ""
             }
           ]
         }

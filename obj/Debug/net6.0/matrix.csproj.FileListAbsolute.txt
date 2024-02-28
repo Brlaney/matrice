@@ -16,3 +16,4 @@ C:\Users\Brlan\Documents\Coding\latest-matrix\matrix\obj\Debug\net6.0\matrix.gen
 C:\Users\Brlan\Documents\Coding\latest-matrix\matrix\obj\Debug\net6.0\ref\matrix.dll
 C:\Users\Brlan\Documents\Coding\latest-matrix\matrix\obj\Debug\net6.0\matrix.csproj.Up2Date
 C:\Users\Brlan\Documents\Coding\latest-matrix\matrix\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Brlan\Documents\Coding\latest-matrix\matrix\obj\Debug\net6.0\matrix.sourcelink.json

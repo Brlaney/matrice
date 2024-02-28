@@ -5,7 +5,7 @@ namespace consoleApp
     using Newtonsoft.Json;
     using System;
     using static consoleApp.InputData;
-    using static consoleApp.StructuralSystem;
+    using static matrix.StructuralSystem;
     /*    using System.Net.Http.Headers;
         using System.Runtime.CompilerServices;
         using System.Transactions;
@@ -16,7 +16,6 @@ namespace consoleApp
     {
         static void Main()
         {
-            //For the future, make more dynamic
             string fileName = "truss1.json";
 
             JSONStructure? jsonData = JsonConvert.DeserializeObject<JSONStructure?>(
@@ -33,9 +32,9 @@ namespace consoleApp
                 inputData = new(jsonData);
             }
 
-            StructuralSystem example_1 = new(inputData.type, inputData.NXY,
-                                             inputData.NF, inputData.ND,
-                                             inputData.CONN, inputData.units);
+            matrix.StructuralSystem example_1 = new(inputData.type, inputData.NXY,
+                                                    inputData.NF, inputData.ND,
+                                                    inputData.CONN, inputData.units);
 
             /*            foreach (Member member in test.MemberData)
                         {
