@@ -77,8 +77,16 @@ namespace consoleApp
 
             Console.WriteLine(reducedK);
 
-            double theDeterminate = example_1.CalculateDeterminate(reducedK);
+            // det(testA) = 318
+            double[,] testA = new double[4, 4]{
+                {1, 0, 4, -6},
+                {2, 5, 0, 3},
+                {-1, 2, 3, 5},
+                {2, 1, -2, 3}
+            };
 
+
+            Determinant theDeterminate = new (testA);
         }
     }
 }

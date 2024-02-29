@@ -5,12 +5,14 @@ using System.Security.Cryptography.X509Certificates;
 using static matrix.StructuralSystem;
 using static System.Net.Mime.MediaTypeNames;*/
 
+using System.Reflection.Metadata.Ecma335;
+
 namespace matrix
 {
     public partial class StructuralSystem
     {
         public system type { get; set; }
-        public units Units { get; set; } 
+        public units Units { get; set; }
 
         public int nodes { get; set; }
         public int members { get; set; }
@@ -19,7 +21,7 @@ namespace matrix
         public List<int> RowsColsToRemove { get; set; } = new List<int>();
         public int[] RowsColsToUse { get; set; }
 
-        public List<Node> nodeData { get; set;} = new List<Node>();
+        public List<Node> nodeData { get; set; } = new List<Node>();
         public List<Member> MemberData { get; set; } = new List<Member>();
 
         public enum system
@@ -82,7 +84,7 @@ namespace matrix
             List<int> rowsAndCols = numbers.Except(RowsColsToRemove).ToList();
             RowsColsToUse = new int[rowsAndCols.Count];
 
-            rowsAndCols.ForEach(delegate (int use) {RowsColsToUse[rowsAndCols.IndexOf(use)] = use;});
+            rowsAndCols.ForEach(delegate (int use) { RowsColsToUse[rowsAndCols.IndexOf(use)] = use; });
 
             // Create list of members
             for (int i = 0; i < members; i++)
@@ -111,7 +113,7 @@ namespace matrix
                     globalK[member_k.I, member_k.J] = globalK[member_k.I, member_k.J] + member_k.P;
                 }
             }
-                return globalK;
+            return globalK;
         }
 
         public double[,] ReduceGlobalK(double[,] unreducedK)
@@ -134,7 +136,7 @@ namespace matrix
             }
 
             Console.WriteLine("");
-            for (int i = 0; i < RowsColsToUse.Length; i ++)
+            for (int i = 0; i < RowsColsToUse.Length; i++)
             {
                 //Console.WriteLine($"\t[ {reducedK[row, 0]:0.00}, {reducedK[row, 1]:0.00}, {reducedK[row, 2]:0.00}, {reducedK[row, 3]:0.00} ]");
                 Console.WriteLine($"\t[ {stringReduced[i, 0]}, {stringReduced[i, 1]}, {stringReduced[i, 2]}, {stringReduced[i, 3]} ]");
@@ -143,30 +145,105 @@ namespace matrix
             return reducedK;
         }
 
-        public class DeterminateCalc
+        public class Determinant
         {
-            public double[,] Matrix { get; set; }
-            public int NumberOfRecursians { get; set; }
+            //public double[,] Matrix { get; set; }
+            public int Index { get; set; } = 0;
             public double Determinate { get; set; }
-            public double[] Coefficients { get; set; } 
-            public List<DeterminateCalc> determinateCalcs { get; set; }
+            public double[] Coefficients { get; set; }
+            public List<Determinant> SubDeterminants { get; set; } = new List<Determinant>();
 
-            public DeterminateCalc(double[,] matrix)
+            public int[,,] GetAdjugate(int rank, int iteration)
             {
-                NumberOfRecursians = matrix.GetLength(0) - 1;
+                int[,,] ret = new int[rank - 1, rank - 1, 2];
 
-                for (int i = 0; i < matrix.GetLength(0); i++)
+                if (iteration == 0)
                 {
-                    Coefficients[i] = matrix[0, i];
+                    ret = new int[,,]
+                    {
+                        { { 1, 1 }, { 1, 2 }, { 1, 3 } },
+                        { { 2, 1 }, { 2, 2 }, { 2, 3 } },
+                        { { 3, 1 }, { 3, 2 }, { 3, 3 } }
+                    };
+                }
+                else if (iteration == 1)
+                {
+                    ret = new int[,,]
+                    {
+                        { { 1, 0 }, { 1, 2 }, { 1, 3 } },
+                        { { 2, 0 }, { 2, 2 }, { 2, 3 } },
+                        { { 3, 0 }, { 3, 2 }, { 3, 3 } }
+                    };
+                }
+                else if (iteration == 2)
+                {
+                    ret = new int[,,]
+                    {
+                        { { 1, 0 }, { 1, 1 }, { 1, 3 } },
+                        { { 2, 0 }, { 2, 1 }, { 2, 3 } },
+                        { { 3, 0 }, { 3, 1 }, { 3, 3 } }
+                    };
+                }
+                else if (iteration == 3)
+                {
+                    ret = new int[,,]
+                    {
+                        { { 1, 0 }, { 1, 1 }, { 1, 2 } },
+                        { { 2, 0 }, { 2, 1 }, { 2, 2 } },
+                        { { 3, 0 }, { 3, 1 }, { 3, 2 } }
+                    };
+                }
+
+                return ret;
+            }
+
+            public Determinant(double[,] matrix)
+            {
+                int rank = matrix.GetLength(0);
+
+                // Not a 2 X 2 matrix
+                if (rank > 2)
+                {
+                    Coefficients = new double[rank];
+                    double[,,] subDets = new double[rank, rank - 1, rank - 1];
+
+                    for (int i = 0; i < rank; i++)
+                    {
+                        Coefficients[i] = i % 2 == 0 ? matrix[0, i] : -1 * matrix[0, i];
+
+                        int[,,] AdjugateIndexes = GetAdjugate(rank, i);
+
+                        for (int j = 0; j < rank - 1; j++)
+                        {
+                            for (int k = 0; k < rank - 1; k++)
+                            {
+                                int _i = AdjugateIndexes[j, k, 0];
+                                int _j = AdjugateIndexes[j, k, 1];
+
+                                subDets[i, j, k] = matrix[_i, _j];
+                            }
+                        }
+                    }
+
+/*                    for (int i = 0; i < rank; i ++)
+                    {
+                        double[,] passIn = subDets[0,,];
+
+                        SubDeterminants.Add(new Determinant())
+                    }
+*/
+                    Console.WriteLine(subDets);
+                }
+                else
+                {
+                    double finalDet = Calc2x2(matrix);
                 }
             }
-        }
 
-        public double CalculateDeterminate(double[,] matrix)
-        {
-            DeterminateCalc determinate = new (matrix);
-
-            return determinate.Determinate;
+            public double Calc2x2(double[,] matrix)
+            {
+                return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+            }
         }
 
         /// <summary>
